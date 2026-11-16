@@ -6,6 +6,11 @@
 #include "Components/BoxComponent.h"
 #include "TriggerComponent.generated.h"
 
+class UMover;
+class UPrimitiveComponent;
+class AActor;
+
+
 /**
  * 
  */
@@ -30,15 +35,15 @@ public:
 	UPROPERTY(EditAnywhere)
 	AActor* MoverActor;
 
-	class UMover* Mover;
+	UMover* Mover;
 
 	//wywo³anie gdy coœ wchodzi do sfery komponentu 
 	UFUNCTION()
-	void OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	void OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 	//wywo³anie gdy coœ opuszcza sferê komponentu
 	UFUNCTION()
-	void OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+	void OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 
 	UPROPERTY(EditAnywhere)
 	bool IsPressurePlate = false;

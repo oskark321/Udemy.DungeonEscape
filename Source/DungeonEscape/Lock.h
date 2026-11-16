@@ -6,6 +6,9 @@
 #include "GameFramework/Actor.h"
 #include "Lock.generated.h"
 
+class USceneComponent;
+class UTriggerComponent;
+
 UCLASS()
 class DUNGEONESCAPE_API ALock : public AActor
 {
@@ -25,10 +28,10 @@ public:
 
 	//S3 L73
 	UPROPERTY(VisibleAnywhere)
-	class USceneComponent* RootComp;
+	USceneComponent* RootComp;
 
 	UPROPERTY(VisibleAnywhere)
-	class UTriggerComponent* TriggerComp;
+	UTriggerComponent* TriggerComp;
 
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* KeyItemMesh;
